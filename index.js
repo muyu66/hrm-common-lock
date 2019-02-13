@@ -1,3 +1,4 @@
 'use strict';
 
-module.exports = require('./lib/lock');
+module.exports.Lock = require('./lib/lock');
+module.exports.DistributedLock = require('./lib/distributed_lock');
