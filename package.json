@@ -1,0 +1,34 @@
+{
+  "name": "hrm-common-lock",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "publish": "rm -r dist/ && tsc && cp ./package.json ./dist/ && cp ./index.js ./dist/",
+    "build": "tsc",
+    "test": "tsc && ava --color"
+  },
+  "author": "Zhouyu",
+  "license": "MIT",
+  "devDependencies": {
+    "ava": "^1.0.1"
+  },
+  "dependencies": {
+    "@types/ioredis": "^4.0.4",
+    "@types/ramda": "^0.25.44",
+    "@types/redis": "^2.8.8",
+    "ioredis": "^4.3.0",
+    "ramda": "^0.26.1",
+    "redis": "^2.8.0",
+    "tslint": "^5.12.0",
+    "typescript": "^3.2.2"
+  },
+  "ava": {
+    "files": [
+      "!dist/test/**/lock.spec.js",
+      "dist/test/**/distributed_lock.spec.js"
+    ],
+    "failFast": false,
+    "tap": true
+  }
+}
