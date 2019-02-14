@@ -1,13 +1,19 @@
 {
   "name": "hrm-common-lock",
-  "version": "1.0.1",
+  "version": "1.0.4",
   "description": "通用型Redis锁, 支持普通锁, 分布式锁",
   "main": "index.js",
   "scripts": {
-    "publish": "rm -r dist/ && tsc && cp ./package.json ./dist/ && cp ./index.js ./dist/",
+    "publish": "rm -r dist/ && tsc && cp ./package.json ./dist/ && npm publish dist",
     "build": "tsc",
     "test": "tsc && ava --color"
   },
+  "tags": [
+    "redis-lock",
+    "distributed-lock",
+    "hrm-common",
+    "lock"
+  ],
   "author": "Zhouyu",
   "license": "MIT",
   "devDependencies": {
